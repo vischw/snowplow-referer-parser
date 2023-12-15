@@ -50,7 +50,7 @@ class Parser
 
         $searchTerm = null;
         if ($referer['parameters']) {
-            parse_str($refererParts['query'], $queryParts);
+            parse_str($refererParts['query'] ?? '', $queryParts);
             foreach ($referer['parameters'] as $parameter) {
                 $searchTerm = isset($queryParts[$parameter]) ? $queryParts[$parameter] : $searchTerm;
             }
